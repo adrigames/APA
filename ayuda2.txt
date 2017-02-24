@@ -1,0 +1,6 @@
+void swapElements(int* elementA, int* elementB)
+{
+    int tmp = *elementA;
+    *elementA = *elementB;
+    *elementB = tmp;
+}
