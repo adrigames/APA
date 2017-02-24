@@ -1,0 +1,28 @@
+/*
+    EN: Moves pieces around in CPU. First, it checks if the move is valid; then, it moves the pieces.
+    This function returns true if the move was successful, or false otherwise.
+    ES: Mueve las piezas en CPU. Primero, comprueba si el movimiento es válido; entonces, mueve las piezas.
+    Esta función devuelve true si el movimiento es exitoso, o falso en otro caso.
+*/
+bool move(int row, int col, moves_t move, Table table)
+{
+    if(!moveIsValid(row, col, move, table)) return false;
+    int index0 = row*table.stride+col, index1;
+    switch(move)
+    {
+    case UP:
+        index1 = (row-1)*table+col;
+        break;
+    case DOWN:
+        index1 = (row+1)*table+col;
+        break;
+    case LEFT:
+        index1 = row*table+(col-1);
+        break;
+    case RIGHT:
+        index1 = row*table+(col+1);
+        break;
+    }
+    swapElements(&(table.elements[index0]), &(table.elements[index1]));
+    return true;
+}
