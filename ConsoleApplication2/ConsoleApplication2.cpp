@@ -1,3 +1,6 @@
+
+
+#include "stdafx.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -12,7 +15,7 @@ int main()
 	int pruductoEscalar = 0;
 
 	printf("Bienvenido a Jewels no se cuantos.\n\n");
-	do 
+	do
 	{
 		printf("Quiere tablero estandar o prefiere personalizado? (introduzca 1 o 2)\n\n");
 		scanf_s("%d", &opcion);
@@ -20,8 +23,8 @@ int main()
 
 	if (opcion == 1)
 	{
-		f1 = 10;
-		f2 = 50;
+		f1 = 40;
+		c1 = 10;
 	}
 	else {
 		printf("\nIntroduzca las filas del tablero:\n");
@@ -38,16 +41,19 @@ int main()
 		a[i] = (int *)malloc(c1 * sizeof(int)); //en cada fila reservas memoria = tamaño de un int X numero de columnas
 	}
 
-	
+
 
 	printf("Rellene matriz 1:\n");
 
-	for (i = 0; i<f1; i++)
+	for (i = 0; i < f1; i++)
 	{
-		printf("Fila %d\n", i + 1);
-		for (j = 0; j<c1; j++)
+		printf("\nFila %d",i);
+		for (j = 0; j < c1; j++)
 		{
-			a[i][j] = 0;
+			do {
+				a[i][j] = (int) rand() * 8 + 1;
+
+			} while (a[i][j] < 1 || a[i][j] > 8);
 		}
 	}
 
@@ -63,10 +69,10 @@ int main()
 		printf("\n");
 	}
 
+	free(a);
 
 	system("pause");
 
-	free(a);
 
 	return 0;
 }

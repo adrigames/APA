@@ -1,0 +1,2 @@
+﻿Source1.obj : error LNK2005: ya se definió _main en Source.obj
+C:\Users\Ignacio\Documents\GitHub\APA\CPU\Debug\CPU.exe : fatal error LNK1169: se encontraron uno o más símbolos definidos simultáneamente
