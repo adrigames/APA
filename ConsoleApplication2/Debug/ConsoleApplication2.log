@@ -1,1 +1,15 @@
-﻿LINK : fatal error LNK1168: no se puede abrir C:\Users\Ignacio\Documents\GitHub\APA\ConsoleApplication2\Debug\ConsoleApplication2.exe para escritura
+﻿  ConsoleApplication2.cpp
+c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(57): warning C4473: "scanf_s": no se pasaron suficientes argumentos para la cadena de formato
+  c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(57): note: los marcadores de posición y sus parámetros esperan 2 argumentos variádicos, pero se proporcionaron 1
+  c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(57): note: el argumento variádico 2 que falta es requerido por la cadena de formato '%c'
+  c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(57): note: este argumento se utiliza como un tamaño de búfer
+c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(115): warning C4101: 'k': variable local sin referencia
+c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(117): warning C4101: 'f2': variable local sin referencia
+c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(116): warning C4101: 'b': variable local sin referencia
+c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(117): warning C4101: 'c3': variable local sin referencia
+c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(116): warning C4101: 'c': variable local sin referencia
+c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(117): warning C4101: 'c2': variable local sin referencia
+c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(113): warning C4101: 'arraySize': variable local sin referencia
+c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(117): warning C4101: 'f3': variable local sin referencia
+  ConsoleApplication2.vcxproj -> C:\Users\Ignacio\Documents\GitHub\APA\ConsoleApplication2\Debug\ConsoleApplication2.exe
+  ConsoleApplication2.vcxproj -> C:\Users\Ignacio\Documents\GitHub\APA\ConsoleApplication2\Debug\ConsoleApplication2.pdb (Full PDB)
