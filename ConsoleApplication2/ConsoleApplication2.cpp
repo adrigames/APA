@@ -29,21 +29,53 @@ void imprimirMatriz(int ** matriz, int f, int c)
 	}
 }
 
+void eliminarColumna(int ** matriz, int f, int c)
+{
+	int columna;
+	int i;
+	printf("\nIntroduzca la columna que desea eliminar: ");
+	scanf_s("%d",&columna);
+	columna--;
+	for (i = 0; i < f; i++)
+	{
+		matriz[i][columna] = 0;
+	}
+	imprimirMatriz(matriz, f, c);
+}
+
+void eliminarFila(int ** matriz, int f, int c)
+{
+	int fila;
+	int j;
+	printf("\nIntroduzca la fila que desea eliminar: ");
+	scanf_s("%d", &fila);
+	fila--;
+	for (j = 0; j < f; j++)
+	{
+		matriz[fila][j] = 0;
+	}
+	imprimirMatriz(matriz, f, c);
+}
+
 void mover(int ** matriz, int f, int c)
 {
 	char direccion = 'Z';
 	bool salir = false;
 	int fc, cc;
+	int auxiliar;
 	do
 	{
 		printf("\nIntroduzca las coordenadas de la ficha a mover.\n");
 		scanf_s("%d",&fc);
 		scanf_s("%d",&cc);
-		if (fc > 0 && fc <= f)
+		fc--;
+		cc--;
+		if (fc >= 0 && fc < f)
 		{
-			if (cc > 0 && cc <= c)
+			if (cc >= 0 && cc < c)
 			{
 				//dentro de la matriz
+				auxiliar = matriz[fc][cc];
 				salir = true;
 			}
 		}
@@ -59,42 +91,49 @@ void mover(int ** matriz, int f, int c)
 		switch (direccion)
 		{
 		case 'U':
-			if (fc-1 > 0 && fc-1 <= f)
+			if (fc-1 >= 0 && fc-1 < f)
 			{
-				if (cc > 0 && cc <= c)
+				if (cc >= 0 && cc < c)
 				{
 					//dentro del rango
-
+					matriz[fc][cc] = matriz[fc - 1][cc];
+					matriz[fc - 1][cc] = auxiliar;
 					salir = true;
 				}
 			}
 			break;
 		case 'D':
-			if (fc+1 > 0 && fc+1 <= f)
+			if (fc+1 >= 0 && fc+1 < f)
 			{
-				if (cc > 0 && cc <= c)
+				if (cc >= 0 && cc < c)
 				{
 					//dentro del rango
+					matriz[fc][cc] = matriz[fc + 1][cc];
+					matriz[fc + 1][cc] = auxiliar;
 					salir = true;
 				}
 			}
 			break;
 		case 'L':
-			if (fc > 0 && fc <= f)
+			if (fc >= 0 && fc < f)
 			{
-				if (cc-1 > 0 && cc-1 <= c)
+				if (cc-1 >= 0 && cc-1 < c)
 				{
 					//dentro del rango
+					matriz[fc][cc] = matriz[fc][cc-1];
+					matriz[fc][cc-1] = auxiliar;
 					salir = true;
 				}
 			}
 			break;
 		case 'R':
-			if (fc > 0 && fc <= f)
+			if (fc >= 0 && fc < f)
 			{
-				if (cc+1 > 0 && cc+1 <= c)
+				if (cc+1 >= 0 && cc+1 < c)
 				{
 					//dentro del rango
+					matriz[fc][cc] = matriz[fc][cc+1];
+					matriz[fc][cc+1] = auxiliar;
 					salir = true;
 				}
 			}
@@ -103,7 +142,10 @@ void mover(int ** matriz, int f, int c)
 			salir = false;
 		}
 
+		if (!salir) {
+			printf("\nMovimiento no permitido.\n");
 
+	}
 	} while (!salir);
 	printf("\nmovimiento permitido\n");
 }
@@ -179,6 +221,11 @@ int main()
 				mover(a,f1,c1);
 			}
 			else {
+				if (opcion == 2)
+				{
+					eliminarColumna(a, f1, c1);
+					eliminarFila(a,f1,c1);
+				}
 				//pedir ayuda
 			}
 		}
