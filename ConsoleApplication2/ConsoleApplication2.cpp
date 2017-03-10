@@ -4,6 +4,108 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void borrar(int ** matriz, int f, int c)
+{
+	//1 hacia arriba
+
+	if (matriz[f][c] == matriz[f - 1][c] && (f - 1) >= 0)
+	{
+		//caso dos hacia arriba
+		if (matriz[f][c] == matriz[f - 2][c] && (f - 2) >= 0)
+		{
+			eliminacion_vertical(matriz, f - 2, c);
+			return;
+		}
+		//caso uno arriba uno abajo
+		if (matriz[f][c] == matriz[f + 1][c] && (f + 1)<f)
+		{
+			eliminacion_vertical(matriz, f - 1, c);
+			return;
+		}
+	}
+	if (matriz[f][c] == matriz[f + 1][c] && (f + 1)<f)
+	{
+		//caso dos abajo.
+		if (matriz[f][c] == matriz[f + 2][c] && (f + 2)<f)
+		{
+			eliminacion_vertical(matriz, f, c);
+			return;
+		}
+	}
+	//1 izquierda
+	if (matriz[f][c] == matriz[f][c - 1] && (c - 1) >= 0)
+	{
+		//caso dos izda.
+		if (matriz[f][c] == matriz[f][c - 2] && (c - 2) >= 0)
+		{
+			eliminacion_horizontal(matriz, f, c - 2);
+			return;
+		}
+
+		//caso uno izda uno dcha
+		if (matriz[f][c] == matriz[f][c + 1] && (c + 1)<c)
+		{
+			eliminacion_horizontal(matriz, f, c - 1);
+			return;
+		}
+	}
+	if (matriz[f][c] == matriz[f][c + 1] && (c + 1)<c)
+	{
+		if (matriz[f][c] == matriz[f][c + 2] && (c + 2)<c)
+		{
+			eliminacion_horizontal(matriz, f, c)
+				return;
+		}
+	}
+}
+
+void eliminacion_vertical(int ** matriz, int f, int c)
+{
+	int aux = -1;
+	int val = matriz[f][c];
+	int auxf = f;
+	while (c>0)
+	{
+		while (val == matriz[f][c])
+		{
+			aux = matriz[f][c];
+			matriz[f][c] = matriz[f][c - 1];
+			matriz[f][c - 1] = aux;
+			f++;
+		}
+		f = auxf;
+		c--;
+	}
+	while (val == matriz[f][c])
+	{
+		matriz[f][c] = rand() % 8 + 1;
+		f++;
+	}
+}
+void eliminacion_horizontal(int ** matriz, int f,int c)
+{
+	int aux = -1;
+	int val = matriz[f][c];
+	int auxc = c;
+	while (f>0)
+	{
+		while (val == matriz[f][c])
+		{
+			aux = matriz[f][c];
+			matriz[f][c] = matriz[f - 1][c];
+			matriz[f - 1][c] = aux;
+			c++;
+		}
+		c = auxc;
+		f--;
+	}
+	while (val == matriz[f][c])
+	{
+		matriz[f][c] = rand() % 8 + 1;
+		c++;
+	}
+}
+
 void pedirComando(int *comando)
 {
 	int opcion;
