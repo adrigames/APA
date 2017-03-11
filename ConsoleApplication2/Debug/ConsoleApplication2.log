@@ -5,12 +5,11 @@ c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cp
 c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(41): error C3861: 'eliminacion_horizontal': no se encontró el identificador
 c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(48): error C3861: 'eliminacion_horizontal': no se encontró el identificador
 c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(56): error C3861: 'eliminacion_horizontal': no se encontró el identificador
-c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(210): warning C4473: "scanf_s": no se pasaron suficientes argumentos para la cadena de formato
-  c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(210): note: los marcadores de posición y sus parámetros esperan 2 argumentos variádicos, pero se proporcionaron 1
-  c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(210): note: el argumento variádico 2 que falta es requerido por la cadena de formato '%c'
-  c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(210): note: este argumento se utiliza como un tamaño de búfer
-c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(317): warning C4129: ':': secuencia de escape de carácter no reconocida
-c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(318): warning C4473: "scanf_s": no se pasaron suficientes argumentos para la cadena de formato
-  c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(318): note: los marcadores de posición y sus parámetros esperan 2 argumentos variádicos, pero se proporcionaron 1
-  c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(318): note: el argumento variádico 2 que falta es requerido por la cadena de formato '%c'
-  c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(318): note: este argumento se utiliza como un tamaño de búfer
+c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(226): warning C4473: "scanf_s": no se pasaron suficientes argumentos para la cadena de formato
+  c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(226): note: los marcadores de posición y sus parámetros esperan 2 argumentos variádicos, pero se proporcionaron 1
+  c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(226): note: el argumento variádico 2 que falta es requerido por la cadena de formato '%c'
+  c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(226): note: este argumento se utiliza como un tamaño de búfer
+c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(334): warning C4473: "scanf_s": no se pasaron suficientes argumentos para la cadena de formato
+  c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(334): note: los marcadores de posición y sus parámetros esperan 2 argumentos variádicos, pero se proporcionaron 1
+  c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(334): note: el argumento variádico 2 que falta es requerido por la cadena de formato '%c'
+  c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(334): note: este argumento se utiliza como un tamaño de búfer

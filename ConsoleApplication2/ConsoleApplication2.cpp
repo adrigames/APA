@@ -167,7 +167,7 @@ void eliminarColumna(int ** matriz, int f, int c, int niveldificultad)
 void eliminarFila(int ** matriz, int f, int c, int niveldificultad)
 {
 	int fila;
-	int j;
+	int j, i;
 	printf("\nIntroduzca la fila que desea eliminar: ");
 	scanf_s("%d", &fila);
 	fila--;
@@ -175,6 +175,22 @@ void eliminarFila(int ** matriz, int f, int c, int niveldificultad)
 	{
 		matriz[fila][j] = 0;
 	}
+	imprimirMatriz(matriz, f, c);
+	for (j = 0; j < c; j++) //mueve los numeros abajo
+	{
+		for (i = fila; i > 0; i--)
+		{
+			matriz[i][j] = matriz[i-1][j];
+		}
+	}
+
+	imprimirMatriz(matriz, f, c);
+
+	for (j = 0; j < c; j++) //genera la nueva fila al principio, una vez se ha eliminado la deseada
+	{
+		matriz[0][j] = (int)rand() % niveldificultad + 1;
+	}
+
 	imprimirMatriz(matriz, f, c);
 }
 
@@ -314,7 +330,7 @@ int main()
 
 	do
 	{			// ahora preguntamos si quiere modo manual o modo automático
-		printf("Modo manual o automatico? (introduzca m o a)\: ");
+		printf("Modo manual o automatico? (introduzca m o a): ");
 		scanf_s("%c", &manualauto);
 	} while ((manualauto != 'm' && manualauto != 'M') && (manualauto != 'a' && manualauto != 'A'));
 
