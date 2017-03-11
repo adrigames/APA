@@ -1,15 +1,16 @@
 ﻿  ConsoleApplication2.cpp
-c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(89): warning C4473: "scanf_s": no se pasaron suficientes argumentos para la cadena de formato
-  c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(89): note: los marcadores de posición y sus parámetros esperan 2 argumentos variádicos, pero se proporcionaron 1
-  c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(89): note: el argumento variádico 2 que falta es requerido por la cadena de formato '%c'
-  c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(89): note: este argumento se utiliza como un tamaño de búfer
-c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(157): warning C4101: 'k': variable local sin referencia
-c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(159): warning C4101: 'f2': variable local sin referencia
-c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(158): warning C4101: 'b': variable local sin referencia
-c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(159): warning C4101: 'c3': variable local sin referencia
-c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(158): warning C4101: 'c': variable local sin referencia
-c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(159): warning C4101: 'c2': variable local sin referencia
-c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(155): warning C4101: 'arraySize': variable local sin referencia
-c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(159): warning C4101: 'f3': variable local sin referencia
-  ConsoleApplication2.vcxproj -> C:\Users\Ignacio\Documents\GitHub\APA\ConsoleApplication2\Debug\ConsoleApplication2.exe
-  ConsoleApplication2.vcxproj -> C:\Users\Ignacio\Documents\GitHub\APA\ConsoleApplication2\Debug\ConsoleApplication2.pdb (Full PDB)
+c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(16): error C3861: 'eliminacion_vertical': no se encontró el identificador
+c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(22): error C3861: 'eliminacion_vertical': no se encontró el identificador
+c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(31): error C3861: 'eliminacion_vertical': no se encontró el identificador
+c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(41): error C3861: 'eliminacion_horizontal': no se encontró el identificador
+c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(48): error C3861: 'eliminacion_horizontal': no se encontró el identificador
+c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(56): error C3861: 'eliminacion_horizontal': no se encontró el identificador
+c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(210): warning C4473: "scanf_s": no se pasaron suficientes argumentos para la cadena de formato
+  c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(210): note: los marcadores de posición y sus parámetros esperan 2 argumentos variádicos, pero se proporcionaron 1
+  c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(210): note: el argumento variádico 2 que falta es requerido por la cadena de formato '%c'
+  c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(210): note: este argumento se utiliza como un tamaño de búfer
+c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(317): warning C4129: ':': secuencia de escape de carácter no reconocida
+c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(318): warning C4473: "scanf_s": no se pasaron suficientes argumentos para la cadena de formato
+  c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(318): note: los marcadores de posición y sus parámetros esperan 2 argumentos variádicos, pero se proporcionaron 1
+  c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(318): note: el argumento variádico 2 que falta es requerido por la cadena de formato '%c'
+  c:\users\ignacio\documents\github\apa\consoleapplication2\consoleapplication2.cpp(318): note: este argumento se utiliza como un tamaño de búfer
