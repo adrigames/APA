@@ -295,6 +295,151 @@ void mover(int ** matriz, int f, int c, int niveldificultad)
 	printf("\nmovimiento permitido\n");
 }
 
+void moverAut(int ** matriz, int f, int c, int fc, int cc, char direccion, int niveldificultad)
+{
+
+	int auxiliar = matriz[fc][cc];
+
+
+
+	switch (direccion)
+	{
+	case 'U':
+		if (fc - 1 >= 0 && fc - 1 < f)
+		{
+			if (cc >= 0 && cc < c)
+			{
+				//dentro del rango
+				matriz[fc][cc] = matriz[fc - 1][cc];
+				matriz[fc - 1][cc] = auxiliar;
+				borrar(matriz, fc, cc, niveldificultad);
+				borrar(matriz, fc - 1, cc, niveldificultad);
+			}
+		}
+		break;
+	case 'D':
+		if (fc + 1 >= 0 && fc + 1 < f)
+		{
+			if (cc >= 0 && cc < c)
+			{
+				//dentro del rango
+				matriz[fc][cc] = matriz[fc + 1][cc];
+				matriz[fc + 1][cc] = auxiliar;
+				borrar(matriz, fc, cc, niveldificultad);
+				borrar(matriz, fc + 1, cc, niveldificultad);
+			}
+		}
+		break;
+	case 'L':
+		if (fc >= 0 && fc < f)
+		{
+			if (cc - 1 >= 0 && cc - 1 < c)
+			{
+				//dentro del rango
+				matriz[fc][cc] = matriz[fc][cc - 1];
+				matriz[fc][cc - 1] = auxiliar;
+				borrar(matriz, fc, cc, niveldificultad);
+				borrar(matriz, fc, cc - 1, niveldificultad);
+			}
+		}
+		break;
+	case 'R':
+		if (fc >= 0 && fc < f)
+		{
+			if (cc + 1 >= 0 && cc + 1 < c)
+			{
+				//dentro del rango
+				matriz[fc][cc] = matriz[fc][cc + 1];
+				matriz[fc][cc + 1] = auxiliar;
+				borrar(matriz, fc, cc, niveldificultad);
+				borrar(matriz, fc, cc + 1, niveldificultad);
+			}
+		}
+		break;
+	}
+
+}
+
+void automatico(int ** matriz, int f, int c, int niveldificultad)
+{
+	int fi, ci;
+	int val;
+	bool borrado;
+	char salir = 'Q';
+	printf("\nModo automático\n -Para salir introduzca 'Q'\n -Para continuar introduzca cualquier otra letra\n");
+	scanf_s("%c", &salir);
+	while (salir != 'Q'){
+		fi = 0;
+		ci = 0;
+		borrado = false;
+		//bucle iterador horizontal
+		do
+		{
+			val = matriz[fi][ci];
+			if (val == matriz[fi][ci + 1] && (ci + 1) < c && fi >= 0)
+			{
+				if (val == matriz[fi - 1][ci + 2] && (ci + 2) < c && (fi - 1) >= 0)
+				{
+					moverAut(matriz, f, c, (fi - 1), (ci + 2), 'D', niveldificultad);
+					borrado = true;
+				}
+				if (val == matriz[fi][ci + 3] && (ci + 3) < c)
+				{
+					moverAut(matriz, f, c, fi, (ci + 3), 'L', niveldificultad);
+					borrado = true;
+				}
+				if (val == matriz[fi + 1][ci + 2] && (ci + 2) < c && (fi + 1) < f)
+				{
+					moverAut(matriz, f, c, (fi + 1), (ci + 2), 'U', niveldificultad);
+					borrado = true;
+				}
+			}
+			ci++;
+			if (ci == c) {
+				ci = 0;
+				fi++;
+			}
+
+		} while (fi < f && ci < c && !borrado);
+
+		//bucle iterador vertical
+		if (!borrado) {
+			do
+			{
+				val = matriz[fi][ci];
+				if (val == matriz[fi + 1][ci] && (fi + 1) < f && ci >= 0)
+				{
+					if (val == matriz[fi + 2][ci - 1] && (ci - 1) >= 0 && (fi + 2) < f)
+					{
+						moverAut(matriz, f, c, (fi + 2), (ci - 1), 'R', niveldificultad);
+						borrado = true;
+					}
+					if (val == matriz[fi + 3][ci] && (fi + 3) < f)
+					{
+						moverAut(matriz, f, c, (fi + 3), ci, 'U', niveldificultad);
+						borrado = true;
+					}
+					if (val == matriz[fi + 2][ci + 1] && (ci + 1) < c && (fi + 2) < f)
+					{
+						moverAut(matriz, f, c, (fi + 2), (ci + 1), 'L', niveldificultad);
+						borrado = true;
+					}
+				}
+				fi++;
+				if (fi == f) {
+					fi = 0;
+					ci++;
+				}
+
+			} while (fi < f && ci < c && !borrado);
+		}
+
+		printf("\n-Para salir introduzca 'Q'\n -Para continuar introduzca cualquier otra letra\n");
+		scanf_s("%c", &salir);
+	} 
+	return;
+}
+
 int main()
 {
 	int arraySize;
