@@ -376,19 +376,19 @@ void automatico(int ** matriz, int f, int c, int niveldificultad)
 		do
 		{
 			val = matriz[fi][ci];
-			if (val == matriz[fi][ci + 1] && (ci + 1) < c && fi >= 0)
+			if (val == matriz[fi][ci + 1] && (ci + 1) < c && fi >= 0 && !borrado)
 			{
-				if (val == matriz[fi - 1][ci + 2] && (ci + 2) < c && (fi - 1) >= 0)
+				if (val == matriz[fi - 1][ci + 2] && (ci + 2) < c && (fi - 1) >= 0 && !borrado)
 				{
 					moverAut(matriz, f, c, (fi - 1), (ci + 2), 'D', niveldificultad);
 					borrado = true;
 				}
-				if (val == matriz[fi][ci + 3] && (ci + 3) < c)
+				if (val == matriz[fi][ci + 3] && (ci + 3) < c && !borrado)
 				{
 					moverAut(matriz, f, c, fi, (ci + 3), 'L', niveldificultad);
 					borrado = true;
 				}
-				if (val == matriz[fi + 1][ci + 2] && (ci + 2) < c && (fi + 1) < f)
+				if (val == matriz[fi + 1][ci + 2] && (ci + 2) < c && (fi + 1) < f && !borrado)
 				{
 					moverAut(matriz, f, c, (fi + 1), (ci + 2), 'U', niveldificultad);
 					borrado = true;
@@ -409,17 +409,17 @@ void automatico(int ** matriz, int f, int c, int niveldificultad)
 				val = matriz[fi][ci];
 				if (val == matriz[fi + 1][ci] && (fi + 1) < f && ci >= 0)
 				{
-					if (val == matriz[fi + 2][ci - 1] && (ci - 1) >= 0 && (fi + 2) < f)
+					if (val == matriz[fi + 2][ci - 1] && (ci - 1) >= 0 && (fi + 2) < f && !borrado)
 					{
 						moverAut(matriz, f, c, (fi + 2), (ci - 1), 'R', niveldificultad);
 						borrado = true;
 					}
-					if (val == matriz[fi + 3][ci] && (fi + 3) < f)
+					if (val == matriz[fi + 3][ci] && (fi + 3) < f && !borrado)
 					{
 						moverAut(matriz, f, c, (fi + 3), ci, 'U', niveldificultad);
 						borrado = true;
 					}
-					if (val == matriz[fi + 2][ci + 1] && (ci + 1) < c && (fi + 2) < f)
+					if (val == matriz[fi + 2][ci + 1] && (ci + 1) < c && (fi + 2) < f && !borrado)
 					{
 						moverAut(matriz, f, c, (fi + 2), (ci + 1), 'L', niveldificultad);
 						borrado = true;
